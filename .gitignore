@@ -1,0 +1,5 @@
+### dotfiles
+.DS_Store
+
+# Emacs backup file
+*/*~
