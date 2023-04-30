@@ -114,3 +114,9 @@ Mary is a beautiful woman.
 然后再结合书中上下文以及最终通过翻译软件来辅助理解。
 
 语法可以大大减少你对词汇量的需求，并且这只是它的一个好处。
+
+* 相关资源
+- [[eww:https://www.bilibili.com/video/BV1ns4y1A7fj][罗肖尼：如何永远学会一个单词？]] 看完文章还觉得迷惑？强烈推荐这个视频，以及这个UP其他关于英语学习的视频。
+- [[eww:https://my.vocabularysize.com][词汇量自测]]
+  - [[eww:https://my.vocabularysize.com/result/71ffbe2554f0ae3f28f737303da7772f][我的词汇量：5200，截止2023-04-27]]
+- [[eww:https://forum.freemdict.com/][FreeMdict]] 大量的学习资料：字典、书籍等。
