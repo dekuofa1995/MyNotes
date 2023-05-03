@@ -4,6 +4,6 @@
 #+TAGS[]:
 #+CATEGORIES[]:
 
-Please access [[eww:https://dekuofa1995.github.io/][My Blog]] to get a better reading experience.
+Please access [[https://dekuofa1995.github.io/][My Blog]] to get a better reading experience.
 
 If you find some bug/error/typo in my blog content, please open an issue. THX!
