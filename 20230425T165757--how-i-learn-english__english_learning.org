@@ -46,21 +46,21 @@
 
 =此是我个人的学习路径、建议，请谨慎思考后选择性的采纳。=
 
-1. [[eww:https://www.coursera.org/learn/learning-how-to-learn][Learning How to Learn]]， 强烈推荐学习这门课程，这门课程所教授的知识在我这一年多的自学经历中相当受用。
+1. [[https://www.coursera.org/learn/learning-how-to-learn][Learning How to Learn]]， 强烈推荐学习这门课程，这门课程所教授的知识在我这一年多的自学经历中相当受用。
    包括但不限于以下部分：
    - 记忆：课程并不推崇刻意的去锻炼记忆，而是通过将所学的知识点建立联系，形成区块，降低大脑负担。
    - 专注&发散模式的概念以及如何合理的利用各自的长处
    - 锻炼对于学习的帮助
-2. [[eww:https://book.douban.com/subject/34840714/][《旋元佑文法》]]&《旋元佑文法解题》这是两个配套书籍，是旋元佑系列丛书中的两本。
+2. [[https://book.douban.com/subject/34840714/][《旋元佑文法》]]&《旋元佑文法解题》这是两个配套书籍，是旋元佑系列丛书中的两本。
    阅读建议：对于像我这样的英语零基础或者基础很差的人来说，我的建议是第一次阅读时能理解的尽量理解书中的概念，对应的单词短语的用法如果记不住可以暂时忽略。
    每读完一章，做对应的习题。可以不求甚解，但需要记录下问题，留待之后阅读回顾。
    - 由于是台湾作者，因此用语习惯也是遵从台湾的翻译，我推荐按照书中翻译来更便于理解，例如：宾语被译为受语，是动作（动词）的接受对象。
    - 书中并没有我在初高中学习语法时的表、状、补等术语，这类使人 =迷糊= 的概念都被作者梳理成便于读者理解的概念。
    - 在阅读文法大半内容后可以多多尝试阅读英语文本，进行实战练习。
-3. [[eww:https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs?useskin=vector][《SICP》]] 这本书是当时我一边看文法一边看的第一本英语书，略感吃力，但是当发现《文法》书中的知识点能为我所用，且慢慢我能看懂的句子越来越长，越来越复杂，给我很大的信心支持。
+3. [[https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs?useskin=vector][《SICP》]] 这本书是当时我一边看文法一边看的第一本英语书，略感吃力，但是当发现《文法》书中的知识点能为我所用，且慢慢我能看懂的句子越来越长，越来越复杂，给我很大的信心支持。
    但是我当时阅读的时候还是缺少了读书的经验，不知道如何处理各种知识点，如何建立关联关系，如何消化知识点。
    书是好书，只是我当时太笨。
-4. [[eww:https://www.goodreads.com/book/show/241480.Calculus_With_Analytic_Geometry][《Calculus with Analytic Geometry》]] 这本书讲的是数学，但又不仅仅是数学，涉及到经济学、物理学、电磁场等等。
+4. [[https://www.goodreads.com/book/show/241480.Calculus_With_Analytic_Geometry][《Calculus with Analytic Geometry》]] 这本书讲的是数学，但又不仅仅是数学，涉及到经济学、物理学、电磁场等等。
    书中的知识点越学越有意思，把我以前对数学的刻板印象完全改观。
    不过更重要的是书中如何拆分知识点，由于越到后面越需要你对全书的知识点都融汇贯通，你越能体会作者在章节安排、习题布置上的精妙，也越能找到适合你的学习方法。
 
@@ -76,7 +76,7 @@
 - 词汇
   1. 字典：欧陆词典+英英翻译的词典，英语翻译的好处是完全用英语解释（初学者可能有点难受），且阅读的时候也会接触其他相关的单词。
   2. 不去主动记忆词汇，当你有一些语法基础后，你能知道哪些句中的成分可以暂时跳过。只记忆一些频率较高的词汇。
-  3. [[eww:vocabulary.com][Vocabulary.com]] 也是个不错的网站，最近才发现。通过多种方式来学习词汇，适合在有一些语法基础后学习。
+  3. [[vocabulary.com][Vocabulary.com]] 也是个不错的网站，最近才发现。通过多种方式来学习词汇，适合在有一些语法基础后学习。
 
 或许有人会问如何提升词汇量？
 回答这个问题前，我先反问你，你需要的是真的是 ~提升词汇量~ 吗？
@@ -116,7 +116,7 @@ Mary is a beautiful woman.
 语法可以大大减少你对词汇量的需求，并且这只是它的一个好处。
 
 * 相关资源
-- [[eww:https://www.bilibili.com/video/BV1ns4y1A7fj][罗肖尼：如何永远学会一个单词？]] 看完文章还觉得迷惑？强烈推荐这个视频，以及这个UP其他关于英语学习的视频。
-- [[eww:https://my.vocabularysize.com][词汇量自测]]
-  - [[eww:https://my.vocabularysize.com/result/71ffbe2554f0ae3f28f737303da7772f][我的词汇量：5200，截止2023-04-27]]
-- [[eww:https://forum.freemdict.com/][FreeMdict]] 大量的学习资料：字典、书籍等。
+- [[https://www.bilibili.com/video/BV1ns4y1A7fj][罗肖尼：如何永远学会一个单词？]] 看完文章还觉得迷惑？强烈推荐这个视频，以及这个UP其他关于英语学习的视频。
+- [[https://my.vocabularysize.com][词汇量自测]]
+  - [[https://my.vocabularysize.com/result/71ffbe2554f0ae3f28f737303da7772f][我的词汇量：5200，截止2023-04-27]]
+- [[https://forum.freemdict.com/][FreeMdict]] 大量的学习资料：字典、书籍等。
