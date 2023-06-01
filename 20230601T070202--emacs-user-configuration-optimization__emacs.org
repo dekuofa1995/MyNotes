@@ -1,0 +1,126 @@
+#+title:      Emacs User Configuration Optimization
+#+date:       [2023-06-01 Thu 07:02]
+#+filetags:   :emacs:
+#+identifier: 20230601T070202
+
+* Main Idea
+
+1. We need to get the Emacs's startup *log*
+2. *Analyze* the log,and find the packages do not need to be loaded in the Emacs startup phase.
+3. *Lazy* load the packages
+
+* Get Startup Log
+I recommand [[https://github.com/dholm/benchmark-init-el][benchmark-init]].
+** How to use it
+You must install it first, choose any way you prefer.
+Notice: You need to load and active benchmark-init *as soon as possible*.
+I put it in my ~early-init.el~ file.
+
+It gives us two show command
+- =benchmark-init/show-durations-tabulated=:
+  find the *most* spending time packages in the startup phase.
+- =benchmark-init/show-durations-tree=:
+  find the *dependent* relationship of the packages, and the order of the packages
+  loaded.
+to simply I call they as =table= and =tree= respectively.
+
+* Analyze Log
+1. use =table= find the most spending time package.
+2. use =tree= find when you load the package.
+   If you split the configuration file, you can find the closest ~.el~ file in upward
+   direction, which loads the package.
+3. If you are unfamiliar with the package, try to search it on the Internet and
+   understand the *importance* of the package.
+4. choose a strategy and apply it to the package:
+   1. Remove: If you do not need the package right now, then just delete/comment
+      it.
+   2. Not thing change: When you need it loaded in the startup phase.
+   3. Lazy load: When you need it but not in the startup phase.
+** Find the Dependent Files
+When I find a package not in my configuration files, I usually use the way to
+find the dependent files of the package.
+#+begin_src emacs-lisp
+  (defun search-dependent-files (package)
+    (require 'loadhist)
+    (file-dependents (feature-file package)))
+
+  (search-dependent-files 'consult)
+  ;; execute in *scratch* buffer, insert the dependent files in buffer
+  (progn
+    (insert "/n")
+    (dolist (file (search-dependent-files 'consult))
+      (insert (format "%s\n" file))))
+#+end_src
+
+* Lazy Load
+To Lazy load a package, we have many ways to do it.
+
+** Load by special files
+For the programming packages, such as ~eglot~, we can load ~eglot~ by ~prog-mode-hook~
+  #+begin_src emacs-lisp
+    (use-package eglot
+      :ensure nil  ;; Emacs29+ built-in
+      :hook (prog-mode . eglot-ensure) ;; when `prog-mode-hook' executed call `eglot-ensure'
+      ...)
+#+end_src
+
+*** Use `auto-mode-alist'
+By adding pairs to ~auto-mode-alist~ we can enable specified mode when open
+corresponding files automatically.
+#+begin_src emacs-lisp
+  (add-to-list 'auto-mode-alist
+               '("\\.ya?ml\\'" . yaml-ts-mode))
+#+end_src
+
+** Load by Binding or Command
+For the tool packages, such as ~ivy/consult~, we can defer them and use
+~bind/commands~ (from use-package) to load when we first call/use them.
+#+begin_src emacs-lisp
+  (use-package consult
+    :defer ;; implied by :bind and :command
+    :bind
+    ("YOUR BIND" . consult-xxx)
+    ...)
+#+end_src
+* Org
+I found many ~org~ packages loaded in the startup phase.
+Some of them are not in my configuration directly, and when I use
+~search-dependent-files~ it returns ~nil~ or a list of packages, which is also not in my
+config files.
+
+So I go to the packages directory, and use =rg= to search the package name in it.
+#+begin_src shell
+$ rg --no-ignore 'PACKAGE'
+$ rg --no-ignore '(require \'PACKAGE)' ;; the command's result will be more precisely
+#+end_src
+
+Finally, I found the =emacs-dashboard= package load ~org~ packages and other
+packages when I use its widgets.
+I chose to disable some of them.
+#+begin_src emacs-lisp
+  (use-package dashboard
+    :custom
+    (dashboard-items '((recents . 10)
+                       (projects . 10)
+                       ;; (agenda . 5)
+                       ;; (bookmarks . 5)
+                       ;; (registers . 5)
+                       )))
+#+end_src
+
+** Handle Org Babel Packages
+I Learn how to lazy ~org-babel~'s packages in [[https://zhuanlan.zhihu.com/p/59509596][降低 Emacs 启动时间的高级技术]].
+But his code can't use in my Emacs.
+Here is my config
+#+begin_src emacs-lisp
+  (defconst my/org-source-dir (file-name-directory (locate-library "org"))
+    "Emacs Built-In ORG-MODE dir.")
+
+  (use-package ob-python
+      :defer t ;; implied by :commands
+      :ensure nil ;; no need :ensure org-plus-contrib
+      :load-path my/org-source-dir
+      ;; use :commands to load
+      :commands (org-babel-execute:python
+                 org-babel-expand-body:python))
+#+end_src
