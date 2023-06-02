@@ -59,6 +59,7 @@ To Lazy load a package, we have many ways to do it.
 For the programming packages, such as ~eglot~, we can load ~eglot~ by ~prog-mode-hook~
   #+begin_src emacs-lisp
     (use-package eglot
+      :defer t
       :ensure nil  ;; Emacs29+ built-in
       :hook (prog-mode . eglot-ensure) ;; when `prog-mode-hook' executed call `eglot-ensure'
       ...)
@@ -77,7 +78,7 @@ For the tool packages, such as ~ivy/consult~, we can defer them and use
 ~bind/commands~ (from use-package) to load when we first call/use them.
 #+begin_src emacs-lisp
   (use-package consult
-    :defer ;; implied by :bind and :command
+    :defer t
     :bind
     ("YOUR BIND" . consult-xxx)
     ...)
@@ -99,13 +100,11 @@ packages when I use its widgets.
 I chose to disable some of them.
 #+begin_src emacs-lisp
   (use-package dashboard
+    ...
     :custom
     (dashboard-items '((recents . 10)
-                       (projects . 10)
-                       ;; (agenda . 5)
-                       ;; (bookmarks . 5)
-                       ;; (registers . 5)
-                       )))
+                       (projects . 10)))
+    ...)
 #+end_src
 
 ** Handle Org Babel Packages
@@ -117,7 +116,7 @@ Here is my config
     "Emacs Built-In ORG-MODE dir.")
 
   (use-package ob-python
-      :defer t ;; implied by :commands
+      :defer t
       :ensure nil ;; no need :ensure org-plus-contrib
       :load-path my/org-source-dir
       ;; use :commands to load
